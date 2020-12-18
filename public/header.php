@@ -22,22 +22,22 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="index.php">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Products</a>
+        <a class="nav-link" href="product.php">Products</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">News Room</a>
+        <a class="nav-link" href="newsroom.php">News Room</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">News Feeds</a>
+        <a class="nav-link" href="newsfeed.php">News Feeds</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Distribution Channels</a>
+        <a class="nav-link" href="distro.php">Distribution Channels</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact Us</a>
+        <a class="nav-link" href="contact.php">Contact Us</a>
       </li>
     </ul>
   </div>
