@@ -1,65 +1,42 @@
 <?php
-require __DIR__. '\\..\\'."/vendor/autoload.php";
-$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__.'\\..\\'.'/');
-$dotenv->load();
+
 class MySqlDb{
-protected $host;
+
+    protected $host;
     protected $username;
     protected $password;
     protected $db;
+    protected $charset;
+    protected $port;
     protected $conn;
 
 function __construct(){
-$this->host = $_ENV['mysql_host'];
-       $this->username = $_ENV['mysql_username'] ;
-       $this->password = $_ENV['mysql_password'] ;
-       $this->db = $_ENV['mysql_database'] ;      
+    
+       $this->host = $_ENV['mysql_host'];
+       $this->username = $_ENV['mysql_username'];
+       $this->password = $_ENV['mysql_password'];
+       $this->db = $_ENV['mysql_database'];
+       $this->charset = $_ENV['mysql_charset'];  
+       $this->charset = $_ENV['mysql_port'];      
        $this->connect();
       
     }
-private function connect(){
-        $this->conn = new mysqli($this->host, $this->username, $this->password, $this->db);
-        if ($this->conn->connect_error) {
-            die("Connection failed: " . $this->conn->connect_error);
+
+    private function connect(){
+        
+        $options = [
+            \PDO::ATTR_ERRMODE            => \PDO::ERRMODE_EXCEPTION,
+            \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+            \PDO::ATTR_EMULATE_PREPARES   => false,
+        ];
+
+        $dsn = "mysql:host=$this->host;dbname=$this->db;charset=$this->charset;port=$this->port";
+
+        try {
+             $pdo = new \PDO($dsn, $this->username, $this->password, $options);
+        } catch (\PDOException $e) {
+             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
     }
-function getData($table, $where){
-        //$this->connect();
-        $sql = "SELECT * FROM ".$table." WHERE ".$where;          
-        $sql = $this->conn->query($sql);
-        $sql = $sql->fetch_assoc();
-        return $sql;
-}
-function updateData($table, $update_value, $where){
-        $this->connect();
-        $sql = "UPDATE ".$table." SET ".$update_value." WHERE ".$where;        
-        $sql = $this->conn->query($sql);
-        if($sql == true){
-            return true;
-        }else{
-            return false;
-        }
-    }
-function createData($table, $columns, $values){
-        $this->connect();
-        $sql = "INSERT INTO ".$table." ".$columns." VALUES ".$values;        
-        $sql = $this->conn->query($sql);
-        if($sql == true){
-            return $sql;
-        }else{
-            return false;
-        }
-    }
-function deleteData($table, $filter){
-       
-        $this->connect();
-        $sql =  "DELETE FROM ".$table." ".$filter;  
-        $sql = $this->conn->query($sql);
-        if($sql == true){
-            return true;
-        }else{
-            return false;
-        }
-    }
-   
+
 }
