@@ -39,6 +39,12 @@
       <li class="nav-item">
         <a class="nav-link" href="contact.php">Contact Us</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="join.php">Join Now</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.php">Login</a>
+      </li>
     </ul>
   </div>
 </nav>
