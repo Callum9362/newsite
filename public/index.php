@@ -27,15 +27,55 @@
     <div class="container pb-5">
         <div class="card">
             <div class="card-body text-center">
-                <h3>InvestorsHub NewsWire Services</h3>
+                <h3>Services</h3>
+                <div class="row pt-2">
+                    <div class="col-sm">
+                        <h3>Products and Services</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At natus eum sit maxime saepe veritatis perspiciatis repellat beatae id. Recusandae dicta eius repellendus nostrum incidunt nesciunt commodi veniam modi consequuntur.
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit veritatis consequatur deserunt tenetur in repellat? Ut perferendis esse dignissimos veniam hic nihil, totam corrupti, animi cum architecto voluptas quo ex!
+                        </p>
+                        <button class="btn btn-primary btn-lg"><i class="fa fa-shopping-cart" aria-hidden="true"></i> View Products</button>
+                    </div>
+                    <div class="col-sm">
+                        <h3>Distribution Channels</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At natus eum sit maxime saepe veritatis perspiciatis repellat beatae id. Recusandae dicta eius repellendus nostrum incidunt nesciunt commodi veniam modi consequuntur.
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit veritatis consequatur deserunt tenetur in repellat? Ut perferendis esse dignissimos veniam hic nihil, totam corrupti, animi cum architecto voluptas quo ex!
+                        </p>
+                        <button class="btn btn-primary btn-lg"><i class="fa fa-globe" aria-hidden="true"></i> View Channels</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="container pb-5">
         <div class="card">
-            <div class="card-body text-center">
+            <div class="card-body">
                 <h3>News Room</h3>
+                <div class="row pt-2">
+                  <div class="container">
+                        <a href=""><h3>This is an example article header</h3></a>
+                        <p>December 20, 2020 03:40 pm </p>
+                        <h6>Example company name </h6>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sed, modi itaque pariatur quaerat iure nihil assumenda perspiciatis eligendi, hic vitae in similique perferendis earum ex? Tenetur ducimus quos placeat.
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate sunt ipsum totam aperiam expedita molestias unde ab omnis dolores maiores, possimus, reiciendis ullam similique officiis aut consequatur accusamus! Minus, officia.
+                        </p>
+                        <div class="row">
+                             <div class="col-sm">
+                                <p>More News</p>
+                             </div>
+                             <div class="col-sm">
+                                <p>Level 2</p>
+                             </div>
+                             <div class="col-sm">
+                                <p>Message Board</p>
+                             </div>
+                             <div class="col-sm">
+                                <p>Share</p>
+                             </div>
+                        </div>
+                  </div>
+                </div>
             </div>
         </div>
     </div>
