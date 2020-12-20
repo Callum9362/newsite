@@ -12,7 +12,7 @@ if (isset($_POST['btn-login'])) {
     $upass = $_POST['txt_password'];
 
     if ($user->login($uname, $umail, $upass)) {
-        $user->redirect('index.php');
+        $user->redirect('index.php?loggedIn');
     } else {
         $error = "Wrong Details !";
     }
