@@ -8,7 +8,7 @@ class USER
       $this->db = $DB_con;
     }
  
-    public function register($fname,$lname,$uname,$umail,$upass)
+    public function register($uname,$umail,$upass)
     {
        try
        {

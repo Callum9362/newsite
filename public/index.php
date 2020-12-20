@@ -51,7 +51,7 @@
     <div class="container pb-5">
         <div class="card">
             <div class="card-body">
-                <h3>News Room</h3>
+                <h3 class="text-center">News Room</h3>
                 <div class="row pt-2">
                   <div class="container">
                         <a href=""><h3>This is an example article header</h3></a>

@@ -3,6 +3,7 @@
 include 'header.php'; 
 
 
+
 if(isset($_POST['btn-signup']))
 {
    $uname = trim($_POST['txt_uname']);
@@ -40,9 +41,9 @@ if(isset($_POST['btn-signup']))
          }
          else
          {
-            if($user->register($fname,$lname,$uname,$umail,$upass)) 
+            if($user->register($uname,$umail,$upass)) 
             {
-                $user->redirect('join.php?joined');
+                $user->redirect('join.php');
             }
          }
      }
@@ -63,7 +64,7 @@ if(isset($_POST['btn-signup']))
                 <h1 class="text-center">Sign Up Today</h1>
             </div>
             <div class="card-body">
-                <form method="POST">
+                <form method="post">
                 <?php
             if(isset($error))
             {
@@ -80,24 +81,26 @@ if(isset($_POST['btn-signup']))
             {
                 ?>
                 <div class="alert alert-info">
-                     <i class="glyphicon glyphicon-log-in"></i> &nbsp; Successfully registered <a href='index.php'>login</a> here
+                     <i class="glyphicon glyphicon-log-in"></i> &nbsp; Successfully registered <a href='login.php'>login</a> here
                 </div>
                 <?php
            }
            ?>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Username</label>
-                        <input type="text" class="form-control" id="txt_uname">
+                        <input type="text" class="form-control" name="txt_uname" value="<?php if(isset($error)){echo $uname;}?>">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
-                        <input type="email" class="form-control" id="txt_email" aria-describedby="emailHelp">
+                        <input type="email" class="form-control" name="txt_umail" aria-describedby="emailHelp" value="<?php if(isset($error)){echo $umail;}?>">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="txt_upass">
+                        <input type="password" class="form-control" name="txt_upass">
                     </div>
-                    <button type="submit" id="btn-signup" class="btn btn-primary">Submit</button>
+                    <div class="text-center">
+                     <button type="submit" name="btn-signup" class="btn btn-primary btn-lg">Register</button>
+                    </div>
                 </form>
             </div>
         </div>
