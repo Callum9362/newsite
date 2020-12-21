@@ -41,19 +41,19 @@ require_once '../database/Dbconfig.php';
       </li>
       <li class="nav-item">
         <a class="nav-link" href="contact.php">Contact Us</a>
-      </li> 
-      <?php if ($_SESSION['user_session']) {
+      </li>
+      <?php if (!isset($_SESSION['user_session'])) {
         echo '<li class="nav-item">
-                <a class="nav-link" href="">Logout</a>
-               </li>';
-           } else {
+         <a class="nav-link" href="join.php">Join Now</a>
+      </li>';
         echo '<li class="nav-item">
-                 <a class="nav-link" href="join.php">Join Now</a>
-              </li>';
+       <a class="nav-link" href="login.php">Login</a>
+      </li>';
+      } else {
         echo '<li class="nav-item">
-               <a class="nav-link" href="login.php">Login</a>
-              </li>';
-            } ?>
+            <a class="nav-link" href="">Logout</a>
+           </li>';
+      } ?>
     </ul>
   </div>
 </nav>
