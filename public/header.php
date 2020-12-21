@@ -1,5 +1,6 @@
 <?php
 require_once '../database/Dbconfig.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -44,15 +45,17 @@ require_once '../database/Dbconfig.php';
       </li>
       <?php if (!isset($_SESSION['user_session'])) {
         echo '<li class="nav-item">
-         <a class="nav-link" href="join.php">Join Now</a>
-      </li>';
+               <a class="nav-link" href="join.php">Join Now</a>
+              </li>';
         echo '<li class="nav-item">
-       <a class="nav-link" href="login.php">Login</a>
-      </li>';
+               <a class="nav-link" href="login.php">Login</a>
+              </li>';
       } else {
-        echo '<li class="nav-item">
-            <a class="nav-link" href="">Logout</a>
-           </li>';
+        echo '
+        <form action="../includes/logout.php" method="post">
+            <button class="btn btn-submit" type="submit" name="logout-submit">Logout</button>
+        </form>';
+        
       } ?>
     </ul>
   </div>
